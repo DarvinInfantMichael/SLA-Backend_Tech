@@ -1,0 +1,48 @@
+<script>
+    const user = (age) =>{
+        const res = age>=18 ? "You able to vote":"Not able to vote";
+        return res;
+    }
+    console.log(user(22));
+
+    const task = {
+        name:"dim",
+        age:22,
+        sub:"fullstack"}
+
+
+    const sObj = (task) =>{
+        return task
+    }
+    console.log(sObj(task.name));
+
+//Printing of the Eeven number and their count
+   
+const evenNo = (...num) =>{
+
+        const res= num.filter ((n)=>n%2==0)
+        return res
+    }
+    console.log(evenNo(1,2,3,4,5));
+
+const funtion = (...num) => {
+    let sum =0
+
+    for ( n of num){
+        sum+=n
+    }
+    console.log(sum)
+
+}
+console.log(funtion(1,2,3,4))
+
+const obj={name:"dim",age:22};
+const upDate = (obj1) =>{
+    const res = {...obj,age:obj1};
+    return res;
+}
+console.log(upDate(23));
+
+
+
+</script>
