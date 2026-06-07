@@ -1,0 +1,63 @@
+@import "tailwindcss";
+
+.animated-bg {
+  background: linear-gradient(
+    -45deg,
+    #00c6ff,
+    #0072ff,
+    #7f00ff,
+    #e100ff
+  );
+  background-size: 400% 400%;
+  animation: gradientMove 12s ease infinite;
+}
+
+@keyframes gradientMove {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+.bubble {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.15);
+  animation: float 10s infinite linear;
+}
+
+.bubble1 {
+  width: 120px;
+  height: 120px;
+  left: 10%;
+  animation-duration: 12s;
+}
+
+.bubble2 {
+  width: 180px;
+  height: 180px;
+  left: 50%;
+  animation-duration: 16s;
+}
+
+.bubble3 {
+  width: 90px;
+  height: 90px;
+  left: 80%;
+  animation-duration: 10s;
+}
+
+@keyframes float {
+  from {
+    transform: translateY(100vh);
+  }
+  to {
+    transform: translateY(-150px);
+  }
+}
