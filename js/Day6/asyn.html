@@ -1,0 +1,91 @@
+<script>
+//     const getData = () => {
+//     return new Promise((resolve, reject) => {
+//         setTimeout(() => {
+//             resolve("Data Received")
+
+//             if(false){
+//                 reject("Error");
+//             }
+//         }, 2000);
+//     });
+// };
+
+// getData()
+//     .then((data) => {
+//         console.log(data);
+//     })
+//     .catch((err) => {
+//         console.log(err);
+//     });
+
+
+    const getfunction =()=>{
+
+        return fetch("https://dummyjson.com/products").then((res)=>{
+            return res.json()
+        })
+
+    }
+    getfunction().then((user)=>{
+        console.log(user);
+    })
+    .catch((err)=>{
+    console.log(err);
+ })
+
+
+ const getData =async ()=>{
+    const d = await fetch("https://dummyjson.com/products");
+    const r = await d.json()
+    console.log(r.products);
+}
+ getData();
+
+const getDigit=(cd)=>{
+
+    setTimeout(()=>{
+        cd("dim")
+    },2000)
+}
+
+getDigit((data)=>{
+console.log(data);
+
+});
+
+
+const getHere=()=>{
+
+    return new Promise((resolve,reject)=>{
+
+        setTimeout(()=>{
+            resolve("Darvin Infant Michael");
+
+            if(false){
+                reject("Error");
+            }
+        },5000)
+    });
+};
+
+getHere().then((data)=>{
+    console.log(data);
+})
+.catch((err)=>{
+console.log(err);
+
+})
+
+const fetchData =async()=>{
+    try{
+        const da= await getHere();
+        console.log(da);
+    }catch(err){
+
+        console.log(err);
+        }
+};
+
+fetchData();
+</script>
