@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document1</title>
+</head>
+<body>
+    <script>
+
+        const getStudent = () =>{
+
+            return new Promise ((res,rej)=>{
+
+                setTimeout(()=>{
+                    res("Darvin");
+
+                    if(false){
+                        rej("Error");
+                    }
+                },2000)
+
+            })
+        };
+
+        getStudent().then((data)=>{
+            console.log(data);
+        })
+        .catch((err)=>{
+            console.log(err);
+        });
+
+    //2. Employyee Wrok
+
+    const getInfo =()=>{
+
+        return new Promise ((res,rej)=>{
+
+            setTimeout(()=>{
+
+                res({
+                    id:1,
+                    Name:"Darvin",
+                    Role:"Developer"
+                })
+
+                if(false){
+                    rej("Error")
+                }
+            },3000);
+        })
+    };
+    getInfo().then((n)=>{
+        console.log(n);
+        
+    })
+    .catch((e)=>{
+        console.log(e);
+    })
+
+    //Login System
+
+    const getLogin=()=>{
+        return new Promise ((res,rej)=>{
+        
+                setTimeout(()=>{
+                    res("User Login Sucess....")
+
+                    if(false){
+                        rej("Error in Login");
+                    }
+                },2000);
+        })
+    };
+
+    getLogin().then((d)=>{
+        console.log(d);
+    })
+    .catch((e)=>{
+        console.log(e);
+    })
+
+    //get Product
+
+    const getProduct =()=>{
+
+        return new Promise ((res,rej)=>{
+
+            setTimeout(()=>{
+
+                res(["Laptop",
+
+                    "Mobile",
+
+                    "Keyboard"]);
+                
+                    if(false){
+                        rej("Error in Product");
+                    }
+            },2000);
+        })
+    };
+
+    getProduct().then((d)=>{
+        console.log(d);
+        
+    })
+    .catch((e)=>{
+        log(e);
+    })
+
+    //Food Delivery System:
+
+    const getFood =()=>{
+        return new Promise((re,rj)=>{
+            setTimeout(()=>{
+                re("Pizza Delivered Successfully.....");
+
+                if(false){
+                    rj("Error in Delivery..");
+                }
+            },4000);
+        })
+    };
+    getFood().then((data)=>{
+        console.log(data);
+    })
+    .catch((e)=>{
+        console.log(e);
+    });
+
+    //callback Hell
+
+const getUser =()=>{
+
+    return new Promise((res,rej)=>{
+        setTimeout(()=>{
+            res("User Data Fetching....");
+            if(false){
+                rej("Error in Fetching.....")
+            }
+        },1000);
+    })
+};
+
+const getOrders=()=>{
+    return new Promise((res,rej)=>{
+        setTimeout(()=>{
+            res("User Order Fetched....");
+            if(false){
+                rej("Error in Order..");
+            }
+        },1000);
+    })
+};
+
+const getPayment=()=>{
+    return new Promise((res,rej)=>{
+        setTimeout(()=>{
+            res("User Payment Processing.....");
+            if(false){
+                rej("Error in Transaction.....");
+            }
+        },1000);
+    })
+};
+
+// getUser().then(()=>getOrders())
+// .then(()=>getPayment())
+// .then(()=>{
+//     console.log("User Process Completed.......");
+    
+// })
+// .catch((err)=>{
+// console.log(err);
+
+// })
+
+getUser()
+  .then((data) => {
+    console.log(data);
+    return getOrders();
+  })
+  .then((data) => {
+    console.log(data);
+    return getPayment();
+  })
+  .then((data) => {
+    console.log(data);
+    console.log("User Process Completed.......");
+  })
+  .catch((err) => {
+    console.log(err);
+  });
+
+  //success and failed 
+
+  const payment=()=>{
+
+    return new Promise ((res,rej)=>{
+
+        const status = false;
+
+        if(status){
+            res("Pyment Process Sucessfully.....");
+        }else{
+            rej("Payment Failed.....");
+        }
+    })
+  };
+  payment().then((data)=>{
+    console.log(data);
+    
+  }).catch((err)=>{
+    console.log(err);
+    
+  })
+    </script>
+</body>
+</html>

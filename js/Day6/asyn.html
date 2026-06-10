@@ -88,4 +88,51 @@ const fetchData =async()=>{
 };
 
 fetchData();
+
+//callback Hell
+
+const getUser =()=>{
+
+    return new Promise((res,rej)=>{
+        setTimeout(()=>{
+            res("User Data Fetching....");
+            if(false){
+                rej("Error in Fetching.....")
+            }
+        },1000);
+    })
+};
+
+const getOrders=()=>{
+    return new Promise((res,rej)=>{
+        setTimeout(()=>{
+            res("User Order Fetched....");
+            if(false){
+                rej("Error in Order..");
+            }
+        },1000);
+    })
+};
+
+const getPayment=()=>{
+    return new Promise((res,rej)=>{
+        setTimeout(()=>{
+            res("User Payment Processing.....");
+            if(false){
+                rej("Error in Transaction.....");
+            }
+        },1000);
+    })
+};
+
+getUser().then(()=>getOrders())
+.then(()=>getPayment())
+.then(()=>{
+    console.log("User Process Completed.......");
+    
+})
+.catch((err)=>{
+console.log(err);
+
+})
 </script>
