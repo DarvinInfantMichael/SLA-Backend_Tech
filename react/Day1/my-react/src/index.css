@@ -1,0 +1,14 @@
+@import "tailwindcss" ;
+
+.nav-link{
+        @apply bg-gradient-to-r from-green-400 to-cyan-500
+         text-white
+         px-5 py-5
+         rounded-lg
+         shadow-md
+         transition-all
+         duration-300
+         hover:from-blue-500
+         hover:to-purple-600
+         hover:scale-105;
+}
