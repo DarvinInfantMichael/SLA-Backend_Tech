@@ -1,0 +1,12 @@
+import Employee from "./Employee"
+const Company = ({companyname,name,role,salary}) => {
+  return (
+    <div>Company Details :
+        <Employee Name={name} Role={role} Salary={salary} CompanyName={companyname} />
+      
+    </div>
+
+  )
+}
+
+export default Company
